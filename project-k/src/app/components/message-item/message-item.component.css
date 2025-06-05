@@ -145,16 +145,18 @@
     }
     .message-icon {
       color: #2196F3;
-    }
-    .message-text {
+    }    .message-text {
       flex: 1;
       overflow: hidden;
       text-overflow: ellipsis;
       color: #666;
       transition: font-weight 0.2s ease;
     }
-    .message-item:hover .message-text {
-      font-weight: 500;
+    
+      /* Make message text bold and black when starred */
+    .star.starred ~ .content .message-text {
+      font-weight: 600;
+      color: #000000;
     }
     .time {
       color: #858585;
