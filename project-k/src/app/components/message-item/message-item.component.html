@@ -1,4 +1,4 @@
-<div class="message-item" [class.selected]="isSelected" [class.read]="message.isRead">  <div class="checkbox" (click)="toggleSelection($event)">
+<div class="message-item" [class.selected]="isSelected" [class.read]="message.isRead" (click)="openActivityOverview()">  <div class="checkbox" (click)="toggleSelection($event)">
     <input type="checkbox" 
            [checked]="isSelected" 
            (change)="onCheckboxChange($event)"

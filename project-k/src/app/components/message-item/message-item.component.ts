@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class MessageItemComponent {
   @Input() message: any;
   @Output() selectionChange = new EventEmitter<{message: any, selected: boolean}>();
+  @Output() openActivity = new EventEmitter<any>();
   
   // Use getter and setter to sync isSelected with message.isSelected
   get isSelected(): boolean {
@@ -55,5 +56,10 @@ export class MessageItemComponent {
     
     // Prevent default to ensure checkbox behavior is controlled purely by our code
     event.preventDefault();
+  }
+  
+  openActivityOverview() {
+    console.log(`Opening activity overview for message ${this.message.id}`);
+    this.openActivity.emit(this.message);
   }
 }

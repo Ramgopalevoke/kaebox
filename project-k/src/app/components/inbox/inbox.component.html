@@ -25,11 +25,11 @@
       Loading messages...
     </div>
     <ng-container *ngIf="!isLoading">
-      <div class="activity-content">
-        <app-message-item 
+      <div class="activity-content">        <app-message-item 
           *ngFor="let message of messages.slice(0, 3)" 
           [message]="message"
-          (selectionChange)="onMessageSelectionChange($event)">
+          (selectionChange)="onMessageSelectionChange($event)"
+          (openActivity)="openActivityOverview($event)">
         </app-message-item>
       </div>
     </ng-container>

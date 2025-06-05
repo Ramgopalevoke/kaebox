@@ -117,6 +117,13 @@ export class InboxComponent implements OnInit, AfterViewChecked {
   }
   
   // Navigate to activity overview for a specific message
+  openActivityOverview(message: any): void {
+    const id = message.id || message.sender.replace(/\s+/g, '-').toLowerCase();
+    console.log(`Navigating to activity overview for message ID: ${id}`);
+    this.router.navigate(['/activity', id]);
+  }
+  
+  // Navigate to activity overview for a specific message (legacy method)
   viewMessageActivity(message: any): void {
     const id = message.id || message.sender.replace(/\s+/g, '-').toLowerCase();
     this.router.navigate(['/activity', id]);
