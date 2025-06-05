@@ -145,7 +145,8 @@
     }
     .message-icon {
       color: #2196F3;
-    }    .message-text {
+    }    
+    .message-text {
       flex: 1;
       overflow: hidden;
       text-overflow: ellipsis;
