@@ -1,0 +1,11 @@
+<div class="activity-container">
+  <div class="tab-header">
+    <div class="tab active">Activity</div>
+  </div>
+  <div class="message-list">
+    <app-message-item 
+      *ngFor="let message of messages" 
+      [message]="message">
+    </app-message-item>
+  </div>
+</div>

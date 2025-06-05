@@ -1,0 +1,9 @@
+<div class="app-container">
+  <app-header></app-header>
+  <div class="content-container">
+    <app-sidebar *ngIf="!(appService.isActivityView$ | async)"></app-sidebar>
+    <div class="main-content" [class.full-width]="appService.isActivityView$ | async">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

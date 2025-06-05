@@ -1,0 +1,36 @@
+<div class="message-item" [class.selected]="isSelected" [class.read]="message.isRead">  <div class="checkbox" (click)="toggleSelection($event)">
+    <input type="checkbox" 
+           [checked]="isSelected" 
+           (change)="onCheckboxChange($event)"
+           (click)="$event.stopPropagation()">
+    <span class="checkbox-custom"></span>
+  </div><div class="star" [class.starred]="message.starred" (click)="toggleStar($event)">
+    <img 
+      *ngIf="!message.starred" 
+      src="icons/star-outline.svg" 
+      alt="Star Outline" 
+      width="18" 
+      height="18"
+      style="filter: invert(87%) sepia(2%) saturate(0%) hue-rotate(0deg) brightness(85%) contrast(85%);">
+    <img 
+      *ngIf="message.starred" 
+      src="icons/star.svg" 
+      alt="Star" 
+      width="18" 
+      height="18"
+      style="filter: invert(70%) sepia(98%) saturate(366%) hue-rotate(2deg) brightness(101%) contrast(101%);">
+  </div>
+  <div class="sender">{{ message.sender }}</div>  <div class="content">
+    <span *ngIf="message.type === 'phone'" class="icon phone-icon">
+      <img src="icons/phone.svg" alt="Phone" width="16" height="16" style="filter: invert(47%) sepia(78%) saturate(434%) hue-rotate(75deg) brightness(97%) contrast(91%);">
+    </span>
+    <span *ngIf="message.type === 'whatsapp'" class="icon whatsapp-icon">
+      <img src="icons/whatsapp.svg" alt="WhatsApp" width="16" height="16" style="filter: invert(50%) sepia(57%) saturate(2483%) hue-rotate(88deg) brightness(94%) contrast(101%);">
+    </span>
+    <span *ngIf="message.type === 'message'" class="icon message-icon">
+      <img src="icons/message.svg" alt="Message" width="16" height="16" style="filter: invert(45%) sepia(85%) saturate(1352%) hue-rotate(195deg) brightness(97%) contrast(101%);">
+    </span>
+    <span class="message-text">{{ message.content }}</span>
+  </div>
+  <div class="time">{{ message.time }}</div>
+</div>

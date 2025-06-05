@@ -1,0 +1,25 @@
+<div class="sidebar">  <div class="menu-item" [class.active]="currentRoute === 'inbox'" routerLink="/inbox">
+    <span class="icon">
+      <img src="icons/inbox.svg" alt="Inbox" width="18" height="18">
+    </span>
+    <span class="label">Inbox</span>
+  </div>
+  <div class="menu-item" [class.active]="currentRoute === 'starred'" routerLink="/starred">
+    <span class="icon">
+      <img src="icons/star.svg" alt="Star" width="18" height="18">
+    </span>
+    <span class="label">Starred</span>
+  </div>
+  <div class="menu-item" [class.active]="currentRoute === 'contacts'" routerLink="/contacts">
+    <span class="icon">
+      <img src="icons/contacts.svg" alt="Contacts" width="18" height="18">
+    </span>
+    <span class="label">Contacts</span>
+  </div>
+  <div class="menu-item" [class.active]="currentRoute === 'deleted'" routerLink="/deleted">
+    <span class="icon">
+      <img src="icons/delete.svg" alt="Delete" width="18" height="18">
+    </span>
+    <span class="label">Deleted Items</span>
+  </div>
+</div>
