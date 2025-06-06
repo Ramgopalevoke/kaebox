@@ -1,0 +1,25 @@
+<div class="calls-container">  <div class="call-item" *ngFor="let call of calls">
+    <div class="call-avatar">
+      <img src="icons/user-avatar.svg" alt="User Avatar" height="32" width="32">
+    </div>
+    <div class="call-details">
+      <div class="call-number">{{ call.number }}</div>
+      <div class="call-type">
+        <img src="icons/phone.svg" alt="Phone" height="16" width="16">
+        {{ call.type }}
+      </div>
+    </div>    <div class="call-time">{{ call.time }}</div>
+  </div>
+  
+  <!-- Dialer pad floating action button -->
+  <div class="dialer-fab" (click)="openDialerModal()">
+    <img src="icons/dialer-pad.svg" alt="Dialer Pad" height="24" width="24">
+  </div>
+</div>
+
+<!-- Dialer Modal Component -->
+<app-dialer-modal 
+  [isOpen]="isDialerModalOpen" 
+  (closeModal)="closeDialerModal()" 
+  (makeCall)="makeCall($event)">
+</app-dialer-modal>

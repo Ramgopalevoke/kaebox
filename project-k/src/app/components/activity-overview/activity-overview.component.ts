@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CallsComponent } from '../calls/calls.component';
+import { WhatsappComponent } from '../whatsapp/whatsapp.component';
+import { SmsComponent } from '../sms/sms.component';
 
 @Component({
   selector: 'app-activity-overview',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, CallsComponent, WhatsappComponent, SmsComponent],
   templateUrl: './activity-overview.component.html',
   styleUrls: ['./activity-overview.component.css']
 })
@@ -29,9 +32,7 @@ export class ActivityOverviewComponent implements OnInit {
         number: '415-888-8888 (2)', 
         type: 'Mobile',
         time: '4:24 pm'
-      }
-    ]
-  };
+      }    ]  };
   activeTab: string = 'calls';
 
   constructor(private route: ActivatedRoute) { }
@@ -42,7 +43,6 @@ export class ActivityOverviewComponent implements OnInit {
       // In a real app, you would fetch user data based on this ID
     });
   }
-
   setActiveTab(tab: string): void {
     this.activeTab = tab;
   }
